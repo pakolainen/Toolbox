@@ -44,11 +44,11 @@ Chili.CHILI_DIRNAME = LUAUI_DIRNAME.."Widgets/chili/"
 if (-1>0) then
   Chili = {}
   -- make the table strict
-  VFS.Include(Chili.CHILI_DIRNAME .. "Headers/strict.lua")(Chili, widget)
+  VFS.Include(Chili.CHILI_DIRNAME .. "Headers/strict.lua", nil, CHILI_VFS_MODE)(Chili, widget)
 end
 
 for _, file in ipairs(includes) do
-  VFS.Include(Chili.CHILI_DIRNAME .. file, Chili)
+  VFS.Include(Chili.CHILI_DIRNAME .. file, Chili, CHILI_VFS_MODE)
 end
 
 

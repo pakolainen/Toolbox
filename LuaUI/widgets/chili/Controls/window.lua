@@ -45,7 +45,7 @@ function Window:MouseDown(...)
   return inherited.MouseDown(self,...)
 end
 
-VFS.Include(CHILI_DIRNAME .. "Headers/skinutils.lua")
+VFS.Include(CHILI_DIRNAME .. "Headers/skinutils.lua", nil, CHILI_VFS_MODE)
 
 function Window:TweakDraw()
   gl.Color(0.6,1,0.6,0.65)

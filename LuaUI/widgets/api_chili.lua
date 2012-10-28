@@ -4,6 +4,7 @@
 function widget:GetInfo()
   return {
     name      = "Chili Framework",
+    version = 10,
     desc      = "Hot GUI Framework (DO NOT DISABLE)",
     author    = "jK & quantum",
     date      = "WIP",
@@ -12,11 +13,11 @@ function widget:GetInfo()
     enabled   = true,  --  loaded by default?
     handler   = true,
     api       = true,
-	alwaysStart = true,
+    alwaysStart = true,
   }
 end
 
-
+CHILI_VFS_MODE = VFS.ZIP_FIRST
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -29,7 +30,7 @@ local tk
 --------------------------------------------------------------------------------
 
 function widget:Initialize()
-  Chili = VFS.Include(LUAUI_DIRNAME.."Widgets/chili/core.lua")
+  Chili = VFS.Include(LUAUI_DIRNAME.."Widgets/chili/core.lua", nil, CHILI_VFS_MODE)
 
   screen0 = Chili.Screen:New{}
   th = Chili.TextureHandler
